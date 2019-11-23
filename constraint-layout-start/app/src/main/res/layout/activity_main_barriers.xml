@@ -41,8 +41,8 @@
         android:id="@+id/favorite"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/info_background"
         android:contentDescription="@string/placeholder"
         android:padding="5dp"
@@ -85,35 +85,44 @@
         android:id="@+id/settingsLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:labelFor="@+id/settings"
         android:text="@string/settings"
         app:layout_constraintBaseline_creator="1"
-        app:layout_constraintBaseline_toBaselineOf="@+id/settings"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editText2"
         app:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="@+id/activity_main_barriers"
         app:layout_editor_absoluteX="16dp"
         app:layout_editor_absoluteY="238dp"
         tools:layout_constraintBaseline_creator="0"
-        tools:layout_constraintLeft_creator="0"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="238dp" />
+        tools:layout_constraintLeft_creator="0" />
 
     <TextView
         android:id="@+id/cameraLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:labelFor="@+id/cameraType"
+        android:labelFor="@+id/cameraLabel"
         android:text="@string/camera"
         app:layout_constraintBaseline_creator="1"
-        app:layout_constraintBaseline_toBaselineOf="@+id/cameraType"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cameraLabel"
         app:layout_constraintLeft_creator="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_editor_absoluteX="16dp"
         app:layout_editor_absoluteY="189dp"
         tools:layout_constraintBaseline_creator="0"
         tools:layout_constraintLeft_creator="0" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="32dp"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="cameraLabel,settingsLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/settings"
@@ -123,10 +132,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/camera_settings"
-        app:layout_constraintEnd_toEndOf="@+id/cameraType"
+        app:layout_constraintEnd_toEndOf="@+id/cameraLabel"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/cameraType"
-        app:layout_constraintTop_toBottomOf="@+id/cameraType"
+        app:layout_constraintStart_toStartOf="@+id/cameraLabel"
+        app:layout_constraintTop_toBottomOf="@+id/cameraLabel"
         app:layout_editor_absoluteX="73dp"
         app:layout_editor_absoluteY="225dp"
         tools:layout_constraintLeft_creator="1"
@@ -134,12 +143,12 @@
         tools:layout_constraintTop_creator="0" />
 
     <EditText
-        android:id="@+id/cameraType"
+        android:id="@+id/cameraLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/camera_value"
@@ -151,5 +160,33 @@
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="0" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/camera_value"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cameraLabel"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/camera_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="283dp" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left" />
 
 </android.support.constraint.ConstraintLayout>
